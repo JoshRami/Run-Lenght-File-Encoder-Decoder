@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1605375468598" clover="3.2.0">
+  <project timestamp="1605375468598" name="All files">
+    <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="2" methods="5" coveredmethods="5" elements="16" coveredelements="15" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
+    <file name="main.ts" path="C:\Users\LosQuinteros\Desktop\Trainee\Week2\rle\src\main.ts">
+      <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="2" methods="5" coveredmethods="5"/>
+      <line num="4" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

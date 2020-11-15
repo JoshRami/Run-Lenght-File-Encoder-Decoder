@@ -38,17 +38,21 @@ export const decode = (data: string): string => {
   }
   const encodedUnits: string[] = sanitizedData.match(splitRegex);
 
-  return encodedUnits.reduce((acc: string, unit: string, index: number) => {
-    const letter = encodedUnits[index + 1];
-    const repetitions = Number(unit);
-    if (index === encodedUnits.length - 1 || index % 2 === 1) {
-      return acc;
-    }
-    if (letter.length > 1) {
-      throw new Error('rle: Bad encoded format');
-    }
-    const encodedUnit = letter.repeat(repetitions);
+  const encodedData = encodedUnits.reduce(
+    (acc: string, unit: string, index: number) => {
+      const letter = encodedUnits[index + 1];
+      const repetitions = Number(unit);
+      if (index === encodedUnits.length - 1 || index % 2 === 1) {
+        return acc;
+      }
+      if (letter.length > 1) {
+        throw new Error('rle: Bad encoded format');
+      }
+      const encodedUnit = letter.repeat(repetitions);
 
-    return acc.concat(encodedUnit);
-  }, '');
+      return acc.concat(encodedUnit);
+    },
+    '',
+  );
+  return !encodedData ? sanitizedData : encodedData;
 };

@@ -13,8 +13,8 @@ _If a merge on master branch completes a requirement, the requirement will be ma
 - [ ] An application that receives two parameters.
   - [ ] A file name
   - [ ] An option flag
-- [ ] The application should be able to encode a file using run length encoding.
-- [ ] The application should be able to read a file encoded with run length encoding and decode it.
+- [x] The application should be able to encode a file using run length encoding.
+- [x] The application should be able to read a file encoded with run length encoding and decode it.
 - [ ] Input files will only contain text when decoded.
 - [ ] The option flag determines whether to encode or decode the given file.
 - [ ] The application can override the file, or create another one. This is left optional to the developer.

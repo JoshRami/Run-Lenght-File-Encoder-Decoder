@@ -10,9 +10,9 @@ _If a merge on master branch completes a requirement, the requirement will be ma
 
 **Using types and taking advantage of the knowledge gained during the week, create:**
 
-- [ ] An application that receives two parameters.
-  - [ ] A file name
-  - [ ] An option flag
+- [x] An application that receives two parameters.
+  - [x] A file name
+  - [x] An option flag
 - [x] The application should be able to encode a file using run length encoding.
 - [x] The application should be able to read a file encoded with run length encoding and decode it.
 - [ ] Input files will only contain text when decoded.

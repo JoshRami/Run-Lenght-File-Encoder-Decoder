@@ -1,3 +1,8 @@
+/**
+ * Encodes a chunk of data into run length encoding format
+ * @param {data} string - Receive chunk of data, data can have spaces
+ * @returns {string} - return rle encoded data
+ */
 export const encode = (data: string): string => {
   const sanitizedData: string[] = data.trim().split('');
 
@@ -17,6 +22,12 @@ export const encode = (data: string): string => {
   );
 };
 
+/**
+ * Decodes run length encoding chunk of data
+ * @param {data} string - Receive rle encoded data, data to decode
+ *                        cannot have numebers or special char
+ * @returns {string} - return decoded data
+ */
 export const decode = (data: string): string => {
   const space = ' ';
   const splitRegex = new RegExp(/[a-zA-Z]+|[0-9]+(?:\.[0-9]+)?|\.[0-9]+/g);

@@ -5,7 +5,11 @@ interface Input {
   filePath: string;
   option: Option;
 }
-
+/**
+ * Returns input from cli proccess, check and sanitize it
+ * @param {cliInput} string[] - Expect to receive process argv prop
+ * @returns {Input} - Return Input type wich has a clean structure
+ */
 const getCliInput = (cliInput: string[]): Input => {
   const input = yargs(cliInput)
     .option('e', {

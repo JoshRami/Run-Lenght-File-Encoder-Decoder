@@ -34,15 +34,25 @@ export const decode = (data: string): string => {
   const encodedUnits: string[] = sanitizedData.match(splitRegex);
 
   return encodedUnits.reduce((acc: string, unit: string, index: number) => {
-    if (index === encodedUnits.length - 1 || index % 2 === 1) {
+    const isLastElement = index === encodedUnits.length - 1;
+    const isLetter = index % 2 === 1;
+
+    if (isLastElement) {
+      if (!acc) {
+        throw new Error('rle: data to decode appears to be already decode');
+      }
+      return acc;
+    } else if (isLetter) {
       return acc;
     }
+
     const letter = encodedUnits[index + 1];
-    if (letter.length > 1 || isNaN(Number(unit))) {
+    const repetitions = Number(unit);
+
+    if (letter.length > 1 || isNaN(repetitions)) {
       throw new Error('rle: Bad encoded format');
     }
 
-    const repetitions = Number(unit);
     const encodedUnit = letter.repeat(repetitions);
     return acc.concat(encodedUnit);
   }, '');
